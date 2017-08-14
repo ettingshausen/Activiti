@@ -22,7 +22,6 @@
     <module>activiti-services-rest-impl</module>
     <module>activiti-services-identity-keycloak</module>
     <module>activiti-services-identity-basic</module>
-    <module>activiti-services-gateway</module>
     <module>activiti-services-audit</module>
   </modules>
 
