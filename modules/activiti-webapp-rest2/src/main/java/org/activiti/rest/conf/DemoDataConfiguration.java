@@ -30,6 +30,8 @@ import org.activiti.engine.impl.util.IoUtil;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.Model;
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -43,7 +45,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @Configuration
 public class DemoDataConfiguration {
 
- 
+  protected static final Logger LOGGER = LoggerFactory.getLogger(DemoDataConfiguration.class);
+
   @Autowired
   protected IdentityService identityService;
 
@@ -60,19 +63,19 @@ public class DemoDataConfiguration {
   public void init() {
 
     if (Boolean.valueOf(environment.getProperty("create.demo.users", "true"))) {
-     // LOGGER.info("Initializing demo groups");
+      LOGGER.info("Initializing demo groups");
       initDemoGroups();
-     // LOGGER.info("Initializing demo users");
+      LOGGER.info("Initializing demo users");
       initDemoUsers();
     }
 
     if (Boolean.valueOf(environment.getProperty("create.demo.definitions", "true"))) {
-    //  LOGGER.info("Initializing demo process definitions");
+      LOGGER.info("Initializing demo process definitions");
       initDemoProcessDefinitions();
     }
 
     if (Boolean.valueOf(environment.getProperty("create.demo.models", "true"))) {
-    //  LOGGER.info("Initializing demo models");
+      LOGGER.info("Initializing demo models");
       initDemoModelData();
     }
   }
@@ -180,14 +183,14 @@ public class DemoDataConfiguration {
         InputStream svgStream = this.getClass().getClassLoader().getResourceAsStream("org/activiti/rest/demo/model/test.svg");
         repositoryService.addModelEditorSourceExtra(model.getId(), IOUtils.toByteArray(svgStream));
       } catch (Exception e) {
-      //  LOGGER.warn("Failed to read SVG", e);
+        LOGGER.warn("Failed to read SVG", e);
       }
 
       try {
         InputStream editorJsonStream = this.getClass().getClassLoader().getResourceAsStream(jsonFile);
         repositoryService.addModelEditorSource(model.getId(), IOUtils.toByteArray(editorJsonStream));
       } catch (Exception e) {
-        //LOGGER.warn("Failed to read editor JSON", e);
+        LOGGER.warn("Failed to read editor JSON", e);
       }
     }
   }
