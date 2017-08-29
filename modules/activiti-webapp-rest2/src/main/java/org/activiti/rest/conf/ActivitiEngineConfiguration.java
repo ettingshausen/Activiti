@@ -37,7 +37,7 @@ public class ActivitiEngineConfiguration {
     protected Environment environment;
 
     @Bean
-    @ConfigurationProperties(prefix = "app.datasource")
+    @ConfigurationProperties(prefix = "h2.datasource")
     public DataSource dataSource() {
         return new DriverManagerDataSource();
     }
