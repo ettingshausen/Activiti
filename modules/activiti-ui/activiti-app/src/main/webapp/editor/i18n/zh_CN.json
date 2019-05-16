@@ -1050,8 +1050,8 @@
             "CONNECTING-OBJECTS": "连接对象",
             "END-EVENTS": "结束事件",
             "GATEWAYS": "网关",
-            "INTERMEDIATE-CATCH-EVENTS": "中级捕捉事件",
-            "INTERMEDIATE-THROW-EVENTS": "中间投掷事件",
+            "INTERMEDIATE-CATCHING-EVENTS": "中级捕捉事件",
+            "INTERMEDIATE-THROWING-EVENTS": "中间投掷事件",
             "START-EVENTS": "启动事件",
             "STRUCTURAL": "结构",
             "SWIMLANES": "泳道"
@@ -1076,6 +1076,14 @@
             "BOUNDARY-TIMER-EVENT": {
                 "TITLE": "边界计时器事件",
                 "DESCRIPTION": "带有计时器触发器的边界事件"
+            },
+            "BOUNDARY-CANCEL-EVENT": {
+                "TITLE": "边界取消事件",
+                "DESCRIPTION": "边界取消事件"
+            },
+            "BOUNDARY-COMPENSATION-EVENT": {
+                "TITLE": "边界补偿事件",
+                "DESCRIPTION": "边界补偿事件"
             },
             "BUSINESSRULETASK": {
                 "TITLE": "业务规则任务",
@@ -1106,8 +1114,16 @@
                 "DESCRIPTION": "引发错误事件的结束事件"
             },
             "END-NONE-EVENT": {
-                "TITLE": "End event",
+                "TITLE": "结束事件",
                 "DESCRIPTION": "没有特定触发器的结束事件"
+            },
+            "END-CANCEL-EVENT": {
+                "TITLE": "取消结束事件",
+                "DESCRIPTION": "取消结束事件"
+            },
+            "END-TERMINATE-EVENT": {
+                "TITLE": "终止结束事件",
+                "DESCRIPTION": "终止结束事件"
             },
             "EVENT-GATEWAY": {
                 "TITLE": "事件网关",
@@ -1125,24 +1141,24 @@
                 "TITLE": "包含网关",
                 "DESCRIPTION": "包含网关"
             },
-            "INTERMEDIATE-MESSAGE-CATCH-EVENT": {
+            "CATCH-MESSAGE-EVENT": {
                 "TITLE": "中间消息捕获事件",
                 "DESCRIPTION": "带有消息触发器的中间捕获事件"
             },
-            "INTERMEDIATE-SIGNAL-CATCH-EVENT": {
+            "CATCH-SIGNAL-EVENT": {
                 "TITLE": "中间信号捕获事件",
                 "DESCRIPTION": "带有信号触发的中间捕捉事件"
             },
-            "INTERMEDIATE-TIMER-CATCH-EVENT": {
+            "CATCH-TIMER-EVENT": {
                 "TITLE": "中间计时器捕获事件",
                 "DESCRIPTION": "带有定时器触发器的中间捕获事件"
             },
-            "INTERMEDIATE-NONE-THROW-EVENT": {
+            "THROW-NONE-EVENT": {
                 "TITLE": "中间无抛出事件",
                 "DESCRIPTION": "没有特定触发器的中间事件"
             },
-            "INTERMEDIATE-SIGNAL-THROW-EVENT": {
-                "TITLE": "中间信号投掷事件",
+            "THROW-SIGNAL-EVENT": {
+                "TITLE": "中间信号抛出事件",
                 "DESCRIPTION": "带有信号触发的中间事件"
             },
             "LANE": {
@@ -1150,7 +1166,7 @@
                 "DESCRIPTION": "对过程定义进行结构化的车道"
             },
             "MAILTASK": {
-                "TITLE": "Mail task",
+                "TITLE": "邮件任务",
                 "DESCRIPTION": "邮件任务"
             },
             "MANUALTASK": {
@@ -1162,8 +1178,12 @@
                 "DESCRIPTION": "在不同池中连接元素的消息流"
             },
             "MULETASK": {
-                "TITLE": "Mule task",
+                "TITLE": "Mule 任务",
                 "DESCRIPTION": "向Mule发送消息的任务"
+            },
+            "DECISIONTASK": {
+                "TITLE": "决策任务",
+                "DESCRIPTION": "任务使用Activiti DMN规则引擎"
             },
             "PARALLEL-GATEWAY": {
                 "TITLE": "并行网关",
@@ -1222,7 +1242,7 @@
                 "DESCRIPTION": "带有描述文本的诠释元素"
             },
             "USERTASK": {
-                "TITLE": "User task",
+                "TITLE": "用户任务",
                 "DESCRIPTION": "分派给特定人员的手动任务"
             }
         },

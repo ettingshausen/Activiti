@@ -99,7 +99,7 @@ activitiApp
         .registerAvailableLanguageKeys(['en'], {
             'en_*': 'en',
             'en-*': 'en'
-        });
+        }).determinePreferredLanguage();
 
 
     }])
@@ -180,7 +180,7 @@ activitiApp
          
         var proposedLanguage = $translate.proposedLanguage();
         if (proposedLanguage !== 'de' && proposedLanguage !== 'en' && proposedLanguage !== 'es' && proposedLanguage !== 'fr'
-            && proposedLanguage !== 'it' && proposedLanguage !== 'ja') {
+            && proposedLanguage !== 'it' && proposedLanguage !== 'ja' && proposedLanguage !== 'zh_CN') {
             
             $translate.use('en');
         }

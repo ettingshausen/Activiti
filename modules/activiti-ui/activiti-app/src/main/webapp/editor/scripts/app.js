@@ -216,7 +216,7 @@ activitiModeler
         $translateProvider.registerAvailableLanguageKeys(['en'], {
             'en_*': 'en',
             'en-*': 'en'
-        });
+        }).determinePreferredLanguage();
         
   }])
   .run(['$rootScope', '$timeout', '$modal', '$translate', '$location', '$window', 'appResourceRoot',
@@ -391,7 +391,7 @@ activitiModeler
       
             var proposedLanguage = $translate.proposedLanguage();
             if (proposedLanguage !== 'de' && proposedLanguage !== 'en' && proposedLanguage !== 'es' && proposedLanguage !== 'fr'
-                && proposedLanguage !== 'it' && proposedLanguage !== 'ja') {
+                && proposedLanguage !== 'it' && proposedLanguage !== 'ja' && proposedLanguage !== 'zh_CN') {
               
                 $translate.use('en');
             }
@@ -485,4 +485,25 @@ activitiModeler
             }
             return '';
         };
+    })
+    .filter('toKebab', function () {
+        return function (value) {
+
+            if (value === 'BusinessRule') {
+                return "BUSINESSRULETASK"
+            }
+            if (value === 'EventSubProcess') {
+                return "EVENT-SUBPROCESS"
+            }
+            if (value === 'TextAnnotation') {
+                return "TEXTANNOTATION"
+            }
+
+            var res = value.replace(/[ ]/g, '').replace(/([a-z])([A-Z])/g, '$1-$2').toUpperCase();
+            if (value.include("Task") || (value.include("SubProcess"))) {
+                return value.replace(' ', '').replace(/([a-z])([A-Z])/g, '$1$2').toUpperCase();
+            }
+
+            return res;
+        }
     });

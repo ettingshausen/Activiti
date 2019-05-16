@@ -164,7 +164,7 @@ activitiApp
        $translateProvider.registerAvailableLanguageKeys(['en'], {
            'en_*': 'en',
            'en-*': 'en'
-       });
+       }).determinePreferredLanguage();;
 
        // turn loading bar spinner off (angular-loading-bar lib)
        cfpLoadingBarProvider.includeSpinner = false;
@@ -182,7 +182,7 @@ activitiApp
 
         var proposedLanguage = $translate.proposedLanguage();
         if (proposedLanguage !== 'de' && proposedLanguage !== 'en' && proposedLanguage !== 'es' && proposedLanguage !== 'fr'
-            && proposedLanguage !== 'it' && proposedLanguage !== 'ja') {
+            && proposedLanguage !== 'it' && proposedLanguage !== 'ja' && proposedLanguage !== 'zh_CN') {
             
             $translate.use('en');
         }

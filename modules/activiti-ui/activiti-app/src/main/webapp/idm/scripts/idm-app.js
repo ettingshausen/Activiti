@@ -98,7 +98,7 @@ activitiApp.config(['$provide', '$routeProvider', '$translateProvider', function
         $translateProvider.registerAvailableLanguageKeys(['en'], {
             'en_*': 'en',
             'en-*': 'en'
-        });
+        }).determinePreferredLanguage();
 
   }])
     .run(['$rootScope', '$location', '$window', 'AuthenticationSharedService', '$translate', 'appResourceRoot', '$modal',
@@ -181,7 +181,7 @@ activitiApp.config(['$provide', '$routeProvider', '$translateProvider', function
 
             var proposedLanguage = $translate.proposedLanguage();
             if (proposedLanguage !== 'de' && proposedLanguage !== 'en' && proposedLanguage !== 'es' && proposedLanguage !== 'fr'
-                && proposedLanguage !== 'it' && proposedLanguage !== 'ja') {
+                && proposedLanguage !== 'it' && proposedLanguage !== 'ja' && proposedLanguage !== 'zh_CN') {
                 
                 $translate.use('en');
             }

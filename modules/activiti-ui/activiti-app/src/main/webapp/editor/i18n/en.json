@@ -1050,8 +1050,8 @@
             "CONNECTING-OBJECTS": "Connecting Objects",
             "END-EVENTS": "End Events",
             "GATEWAYS": "Gateways",
-            "INTERMEDIATE-CATCH-EVENTS": "Intermediate Catching Events",
-            "INTERMEDIATE-THROW-EVENTS": "Intermediate Throwing Events",
+            "INTERMEDIATE-CATCHING-EVENTS": "Intermediate Catching Events",
+            "INTERMEDIATE-THROWING-EVENTS": "Intermediate Throwing Events",
             "START-EVENTS": "Start Events",
             "STRUCTURAL": "Structural",
             "SWIMLANES": "Swimlanes"
@@ -1076,6 +1076,14 @@
             "BOUNDARY-TIMER-EVENT": {
                 "TITLE": "Boundary timer event",
                 "DESCRIPTION": "A boundary event with a timer trigger"
+            },
+            "BOUNDARY-CANCEL-EVENT": {
+                "TITLE": "Boundary cancel event",
+                "DESCRIPTION": "A boundary cancel event"
+            },
+            "BOUNDARY-COMPENSATION-EVENT": {
+                "TITLE": "Boundary compensation event",
+                "DESCRIPTION": "A boundary compensation event"
             },
             "BUSINESSRULETASK": {
                 "TITLE": "Business rule task",
@@ -1109,6 +1117,14 @@
                 "TITLE": "End event",
                 "DESCRIPTION": "An end event without a specific trigger"
             },
+            "END-CANCEL-EVENT": {
+                "TITLE": "End cancel event",
+                "DESCRIPTION": "A cancel end event"
+            },
+            "END-TERMINATE-EVENT": {
+                "TITLE": "End terminate event",
+                "DESCRIPTION": "A terminate end event"
+            },
             "EVENT-GATEWAY": {
                 "TITLE": "Event gateway",
                 "DESCRIPTION": "An event gateway"
@@ -1125,23 +1141,23 @@
                 "TITLE": "Inclusive gateway",
                 "DESCRIPTION": "An inclusive gateway"
             },
-            "INTERMEDIATE-MESSAGE-CATCH-EVENT": {
+            "CATCH-MESSAGE-EVENT": {
                 "TITLE": "Intermediate message catching event",
                 "DESCRIPTION": "An intermediate catching event with a message trigger"
             },
-            "INTERMEDIATE-SIGNAL-CATCH-EVENT": {
+            "CATCH-SIGNAL-EVENT": {
                 "TITLE": "Intermediate signal catching event",
                 "DESCRIPTION": "An intermediate catching event with a signal trigger"
             },
-            "INTERMEDIATE-TIMER-CATCH-EVENT": {
+            "CATCH-TIMER-EVENT": {
                 "TITLE": "Intermediate timer catching event",
                 "DESCRIPTION": "An intermediate catching event with a timer trigger"
             },
-            "INTERMEDIATE-NONE-THROW-EVENT": {
+            "THROW-NONE-EVENT": {
                 "TITLE": "Intermediate none throwing event",
                 "DESCRIPTION": "An intermediate event without a specific trigger"
             },
-            "INTERMEDIATE-SIGNAL-THROW-EVENT": {
+            "THROW-SIGNAL-EVENT": {
                 "TITLE": "Intermediate signal throwing event",
                 "DESCRIPTION": "An intermediate event with a signal trigger"
             },
@@ -1164,6 +1180,10 @@
             "MULETASK": {
                 "TITLE": "Mule task",
                 "DESCRIPTION": "A task that sends a message to Mule"
+            },
+            "DECISIONTASK": {
+                "TITLE": "Decision task",
+                "DESCRIPTION": "Task to use the Activiti DMN rule engine"
             },
             "PARALLEL-GATEWAY": {
                 "TITLE": "Parallel gateway",
